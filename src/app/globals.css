@@ -1,26 +1,388 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: brightness(10%);
+    z-index: -1;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* 轉場特效 */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.visible-no-move {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+footer {
+    background-color: #111111;
+}
+
+.title {
+    font-size: 60px;
+    color: #937341;
+}
+
+.title-info {
+    color: #c4b998;
+}
+
+.info-hr {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #c89b3c, rgba(255, 255, 255, 0));
+    height: 3px;
+}
+
+.card-text {
+    color: #c4b998;
+}
+.card-text-p {
+    color: #f0e6d2;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card:hover .card-text-p {
+    opacity: 1;
+    visibility: visible;
+}
+
+.area-card,
+.heros-card {
+    background-color: transparent;
+    border: solid 1px transparent;
+    height: 200px;
+    border-radius: 0;
+    transition: border 0.5s ease;
+}
+
+.heros-card {
+    height: 423px;
+}
+
+.area-card:hover,
+.heros-card:hover {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(180deg, #f0e6d2, #c89b3c);
+}
+
+.heros-card:hover {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(180deg, #f0e6d2, #c89b3c);
+}
+
+.area-card-img,
+.heros-card-img {
+    border-radius: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(40%);
+    transition: filter 0.5s ease, filter 0.5s ease;
+}
+
+.area-card:hover .area-card-img,
+.heros-card:hover .heros-card-img {
+    filter: brightness(100%);
+}
+
+.heros-card:hover .heros-card-text {
+    border-top: 1px solid #c89b3c;
+    height: 100px;
+}
+
+.area-card-text,
+.heros-card-text {
+    background-color: #010a13;
+}
+
+.heros-card-text {
+    height: 4rem;
+    transition: height 0.5s ease;
+    border: 1px solid transparent;
+}
+
+.area-card-text p {
+    color: #f0e6d2;
+}
+
+.section-more {
+    color: #c89b3c;
+    transition: color 0.2s ease;
+}
+
+.section-more:hover {
+    color: #f0e6d2;
+}
+
+.section-text {
+    color: #f0e6d2;
+    /* text-indent: 2em; */
+}
+
+.navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+}
+
+.list {
+    color: #f0e6d2;
+}
+
+footer a {
+    color: #c89b3c;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #f0e6d2;
+}
+
+.area-background {
+    width: 100%;
+    height: 100vh;
+}
+
+.section-title {
+    color: #937341;
+}
+
+.info img {
+    max-height: 400px;
+    object-fit: cover;
+    padding-bottom: 1rem;
+}
+
+.info a {
+    text-decoration: none;
+    color: #c89b3c;
+    padding-top: 10px;
+    transition: color 0.2s ease;
+}
+
+.info p {
+    text-decoration: none;
+    color: #c89b3c;
+    padding-top: 10px;
+    transition: color 0.2s ease;
+}
+
+.info a:hover {
+    color: #f0e6d2;
+}
+
+footer {
+    border-top: 2px solid #343434;
+}
+
+.test-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 故事頁面CSS */
+.barImg {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.barImg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    /* 調整陰影高度 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    /* 確保不影響圖片的交互 */
+}
+
+.barImg img {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+
+.story-title {
+    display: block;
+    color: rgb(103, 71, 31);
+    background: -webkit-linear-gradient(bottom, rgb(103, 71, 31), rgb(203, 172, 98)) text;
+    -webkit-text-fill-color: transparent;
+    font-size: 90px;
+}
+
+.story-info {
+    color: #c4b998;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.first-text::first-letter {
+    font-weight: bold;
+    font-size: 40px;
+    float: left;
+    margin-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* text-decoration: underline; */
+    border-bottom: #c89b3c solid 2px;
+    /* 調整首字與段落的對齊 */
+    line-height: 1;
+}
+
+.more-info {
+    display: flex;
+    align-items: center;
+    color: #c4b998;
+}
+
+.more-info::before {
+    content: '';
+    flex: 1;
+    background: linear-gradient(to left, #c89b3c, rgba(255, 255, 255, 0));
+    height: 1px;
+    margin: 0 15px;
+}
+
+.more-info::after {
+    content: '';
+    flex: 1;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #c89b3c);
+    height: 1px;
+    margin: 0 15px;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三列固定寬度 */
+    grid-auto-rows: 300px; /* 固定高度 */
+    gap: 10px; /* 圖片之間的間距 */
+}
+
+.gallery-item {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    object-fit: cover;
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* 略微放大效果 */
+}
+
+.gallery-item:hover img {
+    filter: brightness(20%);
+}
+
+.gallery-item:hover .gallery-item-textbox {
+    border: #c89b3c solid 1px;
+}
+.gallery-item-textbox {
+    width: 90%;
+    height: 90%;
+    border: transparent solid 1px;
+    transition: border 0.3s ease;
+    flex-direction: column;
+}
+
+.gallery-item:hover .gallery-item-textbox {
+    opacity: 1;
+}
+
+.gallery-item-textbox-text {
+    padding: 0 10px;
+}
+
+.gallery-item-textbox-text {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.gallery-item:hover .gallery-item-textbox-text {
+    opacity: 1;
+}
+
+.gallery-item-textbox-text h3 {
+    color: #c89b3c;
+}
+
+.gallery-item-textbox-text p {
+    color: #c4b998;
+}
+
+.gallery-item-textbox-hr {
+    width: 20%;
+    border: #c89b3c 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 反饋表單 */
+.feedback-section h2,
+.feedback-section label {
+    color: #c89b3c;
+}
+
+.feedback-section .form-control::placeholder {
+    color: #c4b998;
+    opacity: 0.7;
+}
+
+.feedback-section .form-control {
+    color: #c89b3c;
+    background-color: rgba(1, 10, 19, 0.7);
+    border-color: #c4b998;
+}
+
+.feedback-section .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(200, 155, 60, 0.25);
+}
+
+.feedback-section .btn-primary {
+    background-color: #c89b3c;
+    border-color: #c89b3c;
+    color: #010a13;
+}
+
+.feedback-section .btn-primary:hover {
+    background-color: #a17c2d;
+    border-color: #a17c2d;
 }
