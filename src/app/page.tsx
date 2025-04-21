@@ -102,17 +102,17 @@ export default function HomePage() {
                     <div className='row'>
                         {[
                             {
-                                href: '/area/Midgard_index.html',
+                                href: '/areas/Midgard',
                                 img: '/img/Midgard.png',
                                 title: '米德加爾德',
                             },
                             {
-                                href: '/area/Asgard_index.html',
+                                href: '/areas/Asgard',
                                 img: '/img/Asgard.png',
                                 title: '阿斯嘉',
                             },
                             {
-                                href: '/area/Niflheim_index.html',
+                                href: '/areas/Niflheim',
                                 img: '/img/Niflheim.png',
                                 title: '尼福爾海姆',
                             },
@@ -136,7 +136,7 @@ export default function HomePage() {
                 </div>
                 {/* 區域查看更多 */}
                 <div className='container text-center hidden'>
-                    <a href='./index_area.html' className='text-decoration-none section-more fs-5'>
+                    <a href='/areas' className='text-decoration-none section-more fs-5'>
                         查看更多 <i className='bi bi-arrow-right-circle' />
                     </a>
                 </div>
@@ -172,9 +172,9 @@ export default function HomePage() {
                 <div className='container hidden'>
                     <div className='row'>
                         {[
-                            { href: '/heros/Thor', img: '/img/thor.png', title: '索爾' },
-                            { href: '/heros/Odin', img: '/img/Odin.webp', title: '奧丁' },
-                            { href: '/heros/Loki', img: '/img/Loki.png', title: '洛基' },
+                            { href: '/heros/thor', img: '/img/thor.png', title: '索爾' },
+                            { href: '/heros/odin', img: '/img/Odin.webp', title: '奧丁' },
+                            { href: '/heros/loki', img: '/img/Loki.png', title: '洛基' },
                         ].map(({ href, img, title }) => (
                             <div className='col mb-3' key={title}>
                                 <a href={href} className='text-decoration-none'>
@@ -196,7 +196,7 @@ export default function HomePage() {
                 </div>
                 {/* 人物查看更多 */}
                 <div className='container text-center pb-5'>
-                    <a href='./index_heros.html' className='text-decoration-none section-more fs-5'>
+                    <a href='/heros' className='text-decoration-none section-more fs-5'>
                         查看更多 <i className='bi bi-arrow-right-circle' />
                     </a>
                 </div>

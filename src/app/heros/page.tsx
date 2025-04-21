@@ -5,15 +5,15 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 export default function Area() {
     const heroes = [
-        { href: './heros/Thor.html', img: '/img/thor.png', title: '索爾' },
-        { href: './heros/Balder.html', img: '/img/Baldr.webp', title: '巴德爾' },
-        { href: './heros/Freyja.html', img: '/img/Freya.webp', title: '芙雷雅' },
-        { href: './heros/Frigga.html', img: '/img/Frigg.png', title: '芙麗嘉' },
-        { href: './heros/Freyr.html', img: '/img/Freyr.png', title: '弗雷' },
-        { href: './heros/Heimdallr.html', img: '/img/Heimdall.png', title: '海姆達爾' },
-        { href: './heros/Loki.html', img: '/img/Loki.png', title: '洛基' },
-        { href: './heros/Odin.html', img: '/img/Odin.webp', title: '奧丁' },
-        { href: './heros/Tyr.html', img: '/img/tyr.png', title: '提爾' },
+        { href: './heros/thor', img: '/img/thor.png', title: '索爾' },
+        { href: './heros/balder', img: '/img/Baldr.webp', title: '巴德爾' },
+        { href: './heros/freyja', img: '/img/Freya.webp', title: '芙雷雅' },
+        { href: './heros/frigga', img: '/img/Frigg.png', title: '芙麗嘉' },
+        { href: './heros/freyr', img: '/img/Freyr.png', title: '弗雷' },
+        { href: './heros/heimdallr', img: '/img/Heimdall.png', title: '海姆達爾' },
+        { href: './heros/loki', img: '/img/Loki.png', title: '洛基' },
+        { href: './heros/odin', img: '/img/Odin.webp', title: '奧丁' },
+        { href: './heros/tyr', img: '/img/tyr.png', title: '提爾' },
     ];
 
     return (
