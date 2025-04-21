@@ -1,6 +1,7 @@
 'use client';
 
 // import img from 'next/img';
+import Link from 'next/link';
 
 export default function HomePage() {
     return (
@@ -38,22 +39,22 @@ export default function HomePage() {
                         <div className='text-center col info'>
                             <img src='/img/Edda.jpg' alt='散文埃達封面' className='img-fluid' />
                             <br />
-                            <a
+                            <Link
                                 href='https://zh.wikipedia.org/zh-tw/%E6%95%A3%E6%96%87%E5%9F%83%E9%81%94'
                                 className='info-img-link'
                             >
                                 <i className='bi bi-caret-up-fill' /> 散文埃達
-                            </a>
+                            </Link>
                         </div>
                         <div className='text-center col info'>
                             <img src='/img/Edda2.jpg' alt='詩體埃達封面' className='img-fluid' />
                             <br />
-                            <a
+                            <Link
                                 href='https://zh.wikipedia.org/zh-tw/%E8%A9%A9%E9%AB%94%E5%9F%83%E9%81%94'
                                 className='info-img-link'
                             >
                                 <i className='bi bi-caret-up-fill' /> 詩體埃達
-                            </a>
+                            </Link>
                         </div>
                         <div className='text-center col info'>
                             <img
@@ -62,14 +63,14 @@ export default function HomePage() {
                                 className='img-fluid'
                             />
                             <br />
-                            <a
+                            <Link
                                 href='https://zh.wikipedia.org/wiki/%E7%9B%A7%E6%81%A9%E5%AD%97%E6%AF%8D'
                                 className='info-img-link'
                             >
                                 <i className='bi bi-caret-up-fill' />{' '}
                                 位於瑞典東約特蘭省沃克符文石刻，上面以新弗薩
                                 克盧恩文字記載了與北歐神話相關的內容。
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -108,7 +109,7 @@ export default function HomePage() {
                             },
                             {
                                 href: '/areas/Asgard',
-                                img: '/img/Asgard.png',
+                                img: '/img/asgard.png',
                                 title: '阿斯嘉',
                             },
                             {
@@ -118,7 +119,7 @@ export default function HomePage() {
                             },
                         ].map(({ href, img, title }) => (
                             <div className='col mb-3' key={title}>
-                                <a href={href} className='text-decoration-none'>
+                                <Link href={href} className='text-decoration-none'>
                                     <div className='card area-card'>
                                         <img
                                             src={img}
@@ -129,16 +130,16 @@ export default function HomePage() {
                                             <h3 className='card-text fw-bold'>{title}</h3>
                                         </div>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         ))}
                     </div>
                 </div>
                 {/* 區域查看更多 */}
                 <div className='container text-center hidden'>
-                    <a href='/areas' className='text-decoration-none section-more fs-5'>
+                    <Link href='/areas' className='text-decoration-none section-more fs-5'>
                         查看更多 <i className='bi bi-arrow-right-circle' />
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -177,7 +178,7 @@ export default function HomePage() {
                             { href: '/heros/loki', img: '/img/Loki.png', title: '洛基' },
                         ].map(({ href, img, title }) => (
                             <div className='col mb-3' key={title}>
-                                <a href={href} className='text-decoration-none'>
+                                <Link href={href} className='text-decoration-none'>
                                     <div className='card heros-card'>
                                         <img
                                             src={img}
@@ -189,16 +190,16 @@ export default function HomePage() {
                                             <p className='card-text-p'>查看更多</p>
                                         </div>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         ))}
                     </div>
                 </div>
                 {/* 人物查看更多 */}
                 <div className='container text-center pb-5'>
-                    <a href='/heros' className='text-decoration-none section-more fs-5'>
+                    <Link href='/heros' className='text-decoration-none section-more fs-5'>
                         查看更多 <i className='bi bi-arrow-right-circle' />
-                    </a>
+                    </Link>
                 </div>
             </div>
 

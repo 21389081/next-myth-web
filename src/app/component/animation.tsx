@@ -1,7 +1,9 @@
 'use client';
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Animation() {
+    const pathname = usePathname();
     useEffect(() => {
         const sections = document.querySelectorAll('.hidden, .fade-in');
 
@@ -20,6 +22,6 @@ export default function Animation() {
         return () => {
             observer.disconnect();
         };
-    }, []);
+    }, [pathname]);
     return null;
 }

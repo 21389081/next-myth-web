@@ -3,6 +3,8 @@
 
 import React from 'react';
 import { HeroDetail } from '../data/hero';
+// import { Container, Row, Col } from 'react-bootstrap';
+import Link from 'next/link';
 
 interface ClientProps {
     hero: HeroDetail;
@@ -57,9 +59,9 @@ export default function Client({ hero }: ClientProps) {
 
             {/* 回到英雄頁面 */}
             <div className='container text-center hidden pb-3'>
-                <a href='../index_heros.html' className='text-decoration-none section-more fs-5'>
+                <Link href='../index_heros.html' className='text-decoration-none section-more fs-5'>
                     <i className='bi bi-arrow-left' /> 回到英雄頁面
-                </a>
+                </Link>
             </div>
         </main>
     );

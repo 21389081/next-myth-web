@@ -3,6 +3,7 @@
 // import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { AreaDetail } from '../data/area';
+import Link from 'next/link';
 
 interface DetailClientProps {
     area: AreaDetail;
@@ -71,7 +72,7 @@ export default function Client({ area }: DetailClientProps) {
                     {area.related.map(({ slug: relSlug, title, img }) => (
                         <Col key={relSlug} className='mb-3'>
                             <Card
-                                as='a'
+                                as={Link}
                                 href={`/areas/${relSlug}`}
                                 className='area-card text-decoration-none position-relative'
                             >
